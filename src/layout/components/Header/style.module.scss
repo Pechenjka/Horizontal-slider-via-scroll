@@ -1,11 +1,16 @@
 .header {
   position: sticky;
   top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background: linear-gradient(0, #464341, #010101);
-  padding: 35px 261px 29px;
+  &__container {
+    max-width: 1920px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 261px 29px;
+  }
   &__phone {
     font-family: Manrope-Medium, serif;
     font-size: 24px;
