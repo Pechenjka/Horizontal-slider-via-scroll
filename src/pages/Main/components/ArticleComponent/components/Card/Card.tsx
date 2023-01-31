@@ -5,8 +5,8 @@ import { PropsCard } from "../../../../../../../types";
 
 export const Card: React.FC<PropsCard> = ({ title, text, image, reverse }) => {
   const cx = classNames.bind(Styles);
-  const stylesImage = cx("card__image", { card__image_editOrder: reverse });
-
+ const stylesImage = cx("card__image", { card__image_editOrder: reverse });
+ // const stylesCard = cx("card", { card__editOrder: reverse });
   return (
     <article className={Styles.card}>
       <img className={stylesImage} src={image} alt="img-card" />

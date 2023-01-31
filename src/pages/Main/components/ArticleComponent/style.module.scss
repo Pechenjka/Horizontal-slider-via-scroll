@@ -17,3 +17,28 @@
     margin-bottom: 120px;
   }
 }
+
+@media screen and (max-width: 1584px) {
+  .article {
+    &:first-of-type {
+      margin-top: 72px;
+    }
+    &__title {
+     font-size: clamp(24px, 3vw, 48px);
+      margin-bottom: 64px;
+    }
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .article {
+    margin-bottom: 70px;
+    margin-top: 70px;
+    &:last-of-type {
+      margin-bottom: 80px;
+    }
+    &__title {
+      padding: 0  20px;
+    }
+  }
+}

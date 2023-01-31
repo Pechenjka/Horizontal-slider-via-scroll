@@ -4,15 +4,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import { Keyboard, Mousewheel } from "swiper";
 import { PropsSliderComponent } from "../../../../../types";
+import { useWindowSize } from "../../../../hooks/hooks";
 
 export const SliderComponent: React.FC<PropsSliderComponent> = ({ title, slides }) => {
+  const { width } = useWindowSize();
+
   return (
     <div className={Styles.slideShow}>
       <h2 className={Styles.slideShow__title}>{title}</h2>
       <Swiper
         className={Styles.mySwiper}
         slidesPerView={"auto"}
-        spaceBetween={40}
+        spaceBetween={width <= 1024 ? 28 : 40}
         speed={600}
         keyboard
         direction={"horizontal"}
@@ -27,9 +30,13 @@ export const SliderComponent: React.FC<PropsSliderComponent> = ({ title, slides 
           return (
             <SwiperSlide
               key={index}
-              style={index === 0 ? { marginLeft: "262px", width: "320px" } : { marginLeft: "0", width: "320px" }}
+              style={{
+                marginLeft: `${index === 0 && (width <= 1024 ? "20px " : "262px")}`,
+                width: width <= 1024 ? "225px " : "320px",
+                height: width <= 1024 ? "344px " : "489px",
+              }}
             >
-              <img src={slide} alt={`${index + 1}`} />
+              <img className={Styles.slideShow__image} src={slide} alt={`${index + 1}`} />
             </SwiperSlide>
           );
         })}
