@@ -25,3 +25,8 @@ export interface PropsCard {
   image: string;
   reverse?: boolean;
 }
+
+export interface PropsSliderComponent {
+  title: string;
+  slides: Array<string>;
+}
