@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  background-color: #141414;
+  &__copyright {
+    font-family: Roboto, serif;
+    padding-top: 150px;
+    padding-bottom: 18px;
+    color: #ffff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
