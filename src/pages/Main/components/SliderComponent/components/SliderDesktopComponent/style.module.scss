@@ -1,0 +1,23 @@
+.sliderDesktop {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  height: 100% !important;
+
+  &__container {
+    display: flex;
+    gap: 40px;
+    margin-left: 262px;
+  }
+  &__image {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sliderDesktop {
+    &__container {
+      margin-left: 20px;
+    }
+  }
+}

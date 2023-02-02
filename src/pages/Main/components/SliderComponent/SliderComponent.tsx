@@ -1,46 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import Styles from "./style.module.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
-import { Keyboard, Mousewheel } from "swiper";
-import { PropsSliderComponent } from "../../../../../types";
 import { useWindowSize } from "../../../../hooks/hooks";
+import { SliderMobileComponent } from "./components/SliderMobileComponent";
+import { SliderDesktopComponent } from "./components/SliderDesktopComponent";
+import { slides } from "../../../../assets/config";
 
-export const SliderComponent: React.FC<PropsSliderComponent> = ({ title, slides }) => {
+export const SliderComponent: React.FC = () => {
   const { width } = useWindowSize();
+  const sliderRef = useRef<any>(null);
 
   return (
-    <div className={Styles.slideShow}>
-      <h2 className={Styles.slideShow__title}>{title}</h2>
-      <Swiper
-        className={Styles.mySwiper}
-        slidesPerView={"auto"}
-        spaceBetween={width <= 1024 ? 28 : 40}
-        speed={600}
-        keyboard
-        direction={"horizontal"}
-        mousewheel={{
-          sensitivity: 1,
-          releaseOnEdges: true,
-        }}
-        modules={[Mousewheel, Keyboard]}
-        allowTouchMove
-      >
-        {slides.map((slide, index) => {
-          return (
-            <SwiperSlide
-              key={index}
-              style={{
-                marginLeft: `${index === 0 && (width <= 1024 ? "20px " : "262px")}`,
-                width: width <= 1024 ? "225px " : "320px",
-                height: width <= 1024 ? "344px " : "489px",
-              }}
-            >
-              <img className={Styles.slideShow__image} src={slide} alt={`${index + 1}`} />
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+    <div style={{ width: "100%" }}>
+      <div className={Styles.slider} ref={sliderRef}>
+        <h2 className={Styles.slider__title}>Lorem ipsum dolor sit amet</h2>
+        {width <= 768 ? (
+          <SliderMobileComponent slides={slides} />
+        ) : (
+          <SliderDesktopComponent slides={slides} sliderRef={sliderRef} />
+        )}
+      </div>
     </div>
   );
 };

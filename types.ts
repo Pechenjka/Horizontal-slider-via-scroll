@@ -26,7 +26,16 @@ export interface PropsCard {
   reverse?: boolean;
 }
 
-export interface PropsSliderComponent {
-  title: string;
-  slides: Array<string>;
+export interface PropsSliderDesktopComponent {
+  sliderRef: any
+  slides: ISlide[]
+}
+
+export interface PropsSliderMobileComponent {
+  slides: ISlide[];
+}
+
+export interface ISlide {
+  image: string
+  id: number
 }
