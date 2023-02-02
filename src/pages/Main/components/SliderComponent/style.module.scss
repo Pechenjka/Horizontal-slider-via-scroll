@@ -1,5 +1,8 @@
-.slideShow {
+.slider {
   width: 100%;
+  overflow: hidden;
+  padding: 0;
+  height: 100% !important;
   &__title {
     font-family: OrchideaPro-Regular, serif;
     font-size: 48px;
@@ -8,11 +11,12 @@
     text-transform: uppercase;
     margin-bottom: 123px;
     padding-left: 262px;
+    order: -1;
   }
 }
 
 @media screen and (max-width: 1280px) {
-  .slideShow {
+  .slider {
     &__title {
       font-size: clamp(24px, 3vw, 48px);
     }
@@ -20,19 +24,16 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .slideShow {
+  .slider {
     &__title {
       padding-left: 20px;
       margin-bottom: 56px;
-    }
-    &__image {
-      width: 100%;
     }
   }
 }
 
 @media screen and (max-width: 568px) {
-  .slideShow {
+  .slider {
     &__title {
       width: 250px;
       line-height: 130%;

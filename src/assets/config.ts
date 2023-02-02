@@ -13,19 +13,19 @@ import slide8 from "../images/slides/slide8.png";
 import slide9 from "../images/slides/slide9.png";
 import slide10 from "../images/slides/slide10.png";
 
-import { IArticles } from "../../types";
+import { IArticles, ISlide } from "../../types";
 
-export const slides: Array<string> = [
-  slide1,
-  slide2,
-  slide3,
-  slide4,
-  slide5,
-  slide6,
-  slide7,
-  slide8,
-  slide9,
-  slide10,
+export const slides: ISlide[] = [
+  {image: slide1, id: 1},
+  {image: slide2, id: 2},
+  {image: slide3, id: 3},
+  {image: slide4, id: 4},
+  {image: slide5, id: 5},
+  {image: slide6, id: 6},
+  {image: slide7, id: 7},
+  {image: slide8, id: 8},
+  {image: slide9, id: 0},
+  {image: slide10, id: 10}
 ];
 
 export const articles: IArticles = {

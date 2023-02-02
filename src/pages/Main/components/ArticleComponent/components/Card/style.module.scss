@@ -24,6 +24,9 @@
     margin-left: 128px;
     max-width: 600px;
     width: 100%;
+    &:last-of-type {
+      margin-bottom: 50px;
+    }
   }
   &__title {
     font-family: OrchideaPro-Regular, serif;
@@ -104,6 +107,9 @@
     &__containerText {
       margin: 0;
       padding: 0 20px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 }
