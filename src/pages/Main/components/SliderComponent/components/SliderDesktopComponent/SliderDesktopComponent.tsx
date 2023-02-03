@@ -13,7 +13,7 @@ export const SliderDesktopComponent: React.FC<PropsSliderDesktopComponent> = ({ 
       scrollTrigger: {
         trigger: sliderRef.current,
         pin: true,
-        start: "top 300px",
+        start: "top 200px",
         end: () => `$+=${sliderRef.current.scrollWidth - sliderRef.current.clientWidth}`,
         scrub: true,
         invalidateOnRefresh: true,
@@ -27,7 +27,7 @@ export const SliderDesktopComponent: React.FC<PropsSliderDesktopComponent> = ({ 
     return () => {
       tl.kill();
     };
-  }, []);
+  }, [sliderRef]);
 
   return (
     <>
